@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_author_authors",
+  "info": {
+    "displayName": "Author",
+    "icon": "angry"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

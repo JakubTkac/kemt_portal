@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "study_programmes",
+  "info": {
+    "singularName": "study-programme",
+    "pluralName": "study-programmes",
+    "displayName": "Study Programme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subject.subject",
+      "inversedBy": "studyProgrammes"
+    },
+    "type_of_study": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type-of-study.type-of-study",
+      "inversedBy": "studyProgrammes"
+    },
+    "goals": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": false
+    },
+    "absolventProfile": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "titleEN": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "goalsEN": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "absolventProfileEN": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

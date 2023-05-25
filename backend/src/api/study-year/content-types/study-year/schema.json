@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "study_years",
+  "info": {
+    "singularName": "study-year",
+    "pluralName": "study-years",
+    "displayName": "Study Year",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "enumeration",
+      "enum": [
+        "zimný",
+        "letný"
+      ]
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subject.subject",
+      "mappedBy": "studyYear"
+    },
+    "titleEN": {
+      "type": "string"
+    },
+    "semesterEN": {
+      "type": "enumeration",
+      "enum": [
+        "winter",
+        "summer"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

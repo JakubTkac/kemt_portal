@@ -1,0 +1,142 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subjects",
+  "info": {
+    "singularName": "subject",
+    "pluralName": "subjects",
+    "displayName": "Subject",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shortTitle": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "subjectID": {
+      "pluginOptions": {},
+      "type": "biginteger",
+      "required": true
+    },
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "shortTitle",
+      "required": true
+    },
+    "teaching": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::employee.employee",
+      "inversedBy": "subjects"
+    },
+    "lecturings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee"
+    },
+    "anotation": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": false
+    },
+    "guarantor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "language": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "websitePage": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "type": {
+      "pluginOptions": {},
+      "type": "enumeration",
+      "enum": [
+        "Povinný",
+        "Povinné voliteľný",
+        "Voliteľný"
+      ],
+      "required": true
+    },
+    "studyProgrammes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::study-programme.study-programme",
+      "mappedBy": "subjects"
+    },
+    "studyYear": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::study-year.study-year",
+      "inversedBy": "subjects"
+    },
+    "titleEN": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "anotationEN": {
+      "type": "text"
+    },
+    "credits": {
+      "type": "integer",
+      "required": true
+    },
+    "completion": {
+      "type": "enumeration",
+      "enum": [
+        "Zápočet (Z-U)",
+        "Klasifikovaný zápočet (KZ)",
+        "Zápočet a skúška (ZS)",
+        "Zápočet (Z-%)"
+      ]
+    },
+    "completionEN": {
+      "type": "enumeration",
+      "enum": [
+        "Credit (C-U)",
+        "Graded credit (GC)",
+        "Credit and Exam (CE)",
+        "Credit (C-%)"
+      ]
+    },
+    "hoursPerSemester": {
+      "type": "integer"
+    },
+    "hoursPerWeek": {
+      "type": "integer"
+    },
+    "studyMethod": {
+      "type": "string"
+    },
+    "syllabus": {
+      "type": "richtext"
+    },
+    "syllabusEN": {
+      "type": "richtext"
+    },
+    "formOfTeaching": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

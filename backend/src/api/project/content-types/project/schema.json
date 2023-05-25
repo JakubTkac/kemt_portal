@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": true
+    },
+    "descriptionEN": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::employee.employee",
+      "inversedBy": "projects"
+    },
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "authorsOther": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {},
+      "component": "author.author"
+    },
+    "type": {
+      "pluginOptions": {},
+      "type": "enumeration",
+      "enum": [
+        "Aktívny",
+        "Ukončený"
+      ],
+      "required": true
+    },
+    "typeEN": {
+      "pluginOptions": {},
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Finished"
+      ],
+      "required": true
+    }
+  }
+}

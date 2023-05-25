@@ -1,0 +1,120 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "pluginOptions": {},
+      "type": "email",
+      "required": true
+    },
+    "address": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": false
+    },
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "titlesBeforeName": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": false
+    },
+    "titlesAfterName": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": false
+    },
+    "publications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication.publication",
+      "mappedBy": "authors"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "authors"
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subject.subject",
+      "mappedBy": "teaching"
+    },
+    "awards": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::award.award",
+      "inversedBy": "employees"
+    },
+    "patents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::patent.patent",
+      "inversedBy": "employees"
+    },
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": false
+    },
+    "managements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::management.management"
+    },
+    "descriptionEN": {
+      "type": "text"
+    },
+    "titleEN": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "roomNumber": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

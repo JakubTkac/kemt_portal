@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patents",
+  "info": {
+    "singularName": "patent",
+    "pluralName": "patents",
+    "displayName": "Patent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "patents"
+    }
+  }
+}

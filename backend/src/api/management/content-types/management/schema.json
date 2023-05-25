@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managements",
+  "info": {
+    "singularName": "management",
+    "pluralName": "managements",
+    "displayName": "Management",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "TitleEN": {
+      "pluginOptions": {},
+      "type": "string"
+    }
+  }
+}

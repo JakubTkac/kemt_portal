@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_of_studies",
+  "info": {
+    "singularName": "type-of-study",
+    "pluralName": "type-of-studies",
+    "displayName": "Type Of Study",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "titleEN": {
+      "type": "string",
+      "required": true
+    },
+    "studyProgrammes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::study-programme.study-programme",
+      "mappedBy": "type_of_study"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_pages",
+  "info": {
+    "displayName": "Page",
+    "icon": "file-alt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "titleEN": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "contentEN": {
+      "type": "richtext"
+    }
+  }
+}

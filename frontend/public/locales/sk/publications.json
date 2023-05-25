@@ -1,0 +1,23 @@
+{
+  "publications": "Publikacie",
+  "projects": "Projekty",
+  "all": "Všetky",
+  "phone": "Phone:",
+  "name": "Názov:",
+  "address": "Address:",
+  "roomNumber": "Room Number:",
+  "authors": "Autori:",
+  "year": "Rok:",
+  "publisher": "Vydavateľ:",
+  "description": "Description:",
+  "anotation": "Anotácia:",
+  "language": "Language:",
+  "shortTitle": "Short Title:",
+  "type": "Type:",
+  "websitePage": "Website Page:",
+  "more": "More Information...",
+  "subjectID": "Subject ID: ",
+  "authorsOther": "Other Authors:",
+  "active": "Aktívne",
+  "finished": "Ukončené"
+}
